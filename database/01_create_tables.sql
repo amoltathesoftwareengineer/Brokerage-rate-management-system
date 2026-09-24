@@ -1,0 +1,2 @@
+-- Brokerage Rate Management System
+-- Table creation scripts
