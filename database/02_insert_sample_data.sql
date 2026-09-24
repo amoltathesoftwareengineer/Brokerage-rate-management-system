@@ -50,3 +50,56 @@ INSERT INTO brokers (
     '9876543212',
     'ACTIVE'
 );
+
+
+-- ============================================
+-- CUSTOMER SAMPLE DATA
+-- ============================================
+
+INSERT INTO customers (
+    customer_id,
+    customer_name,
+    email,
+    phone,
+    address,
+    status
+) VALUES (
+    201,
+    'Rahul Sharma',
+    'rahul.sharma@example.com',
+    '9876500001',
+    'Pune, Maharashtra',
+    'ACTIVE'
+);
+
+INSERT INTO customers (
+    customer_id,
+    customer_name,
+    email,
+    phone,
+    address,
+    status
+) VALUES (
+    202,
+    'Priya Patil',
+    'priya.patil@example.com',
+    '9876500002',
+    'Mumbai, Maharashtra',
+    'ACTIVE'
+);
+
+INSERT INTO customers (
+    customer_id,
+    customer_name,
+    email,
+    phone,
+    address,
+    status
+) VALUES (
+    203,
+    'Amit Kulkarni',
+    'amit.kulkarni@example.com',
+    '9876500003',
+    'Nashik, Maharashtra',
+    'ACTIVE'
+);
