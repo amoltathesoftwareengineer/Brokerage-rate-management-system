@@ -23,3 +23,16 @@ CREATE TABLE customers (
     address VARCHAR2(250),
     status VARCHAR2(20) DEFAULT 'ACTIVE'
 );
+
+
+-- ============================================
+-- PRODUCTS TABLE
+-- ============================================
+
+CREATE TABLE products (
+    product_id NUMBER PRIMARY KEY,
+    product_name VARCHAR2(100) NOT NULL,
+    product_type VARCHAR2(50) NOT NULL,
+    description VARCHAR2(250),
+    status VARCHAR2(20) DEFAULT 'ACTIVE'
+);
