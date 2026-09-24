@@ -97,3 +97,27 @@ CREATE TABLE policies (
     CONSTRAINT chk_policy_dates
         CHECK (policy_end_date >= policy_start_date)
 );
+
+
+-- ============================================
+-- BROKERAGE TRANSACTIONS TABLE
+-- ============================================
+
+CREATE TABLE brokerage_transactions (
+    transaction_id NUMBER PRIMARY KEY,
+    policy_id NUMBER NOT NULL,
+    brokerage_rate NUMBER(5,2) NOT NULL,
+    brokerage_amount NUMBER(12,2) NOT NULL,
+    transaction_date DATE DEFAULT SYSDATE,
+    status VARCHAR2(20) DEFAULT 'PROCESSED',
+
+    CONSTRAINT fk_transaction_policy
+        FOREIGN KEY (policy_id)
+        REFERENCES policies(policy_id),
+
+    CONSTRAINT chk_transaction_rate
+        CHECK (brokerage_rate >= 0 AND brokerage_rate <= 100),
+
+    CONSTRAINT chk_brokerage_amount
+        CHECK (brokerage_amount >= 0)
+);
