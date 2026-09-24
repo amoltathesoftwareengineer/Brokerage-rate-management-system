@@ -36,3 +36,29 @@ CREATE TABLE products (
     description VARCHAR2(250),
     status VARCHAR2(20) DEFAULT 'ACTIVE'
 );
+
+
+-- ============================================
+-- BROKERAGE RATES TABLE
+-- ============================================
+
+CREATE TABLE brokerage_rates (
+    rate_id NUMBER PRIMARY KEY,
+    broker_id NUMBER NOT NULL,
+    product_id NUMBER NOT NULL,
+    brokerage_rate NUMBER(5,2) NOT NULL,
+    effective_from DATE NOT NULL,
+    effective_to DATE,
+    status VARCHAR2(20) DEFAULT 'ACTIVE',
+
+    CONSTRAINT fk_rate_broker
+        FOREIGN KEY (broker_id)
+        REFERENCES brokers(broker_id),
+
+    CONSTRAINT fk_rate_product
+        FOREIGN KEY (product_id)
+        REFERENCES products(product_id),
+
+    CONSTRAINT chk_brokerage_rate
+        CHECK (brokerage_rate >= 0 AND brokerage_rate <= 100)
+);
