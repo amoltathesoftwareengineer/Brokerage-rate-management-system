@@ -209,3 +209,74 @@ INSERT INTO brokerage_rates (
     NULL,
     'ACTIVE'
 );
+
+
+-- ============================================
+-- POLICY SAMPLE DATA
+-- ============================================
+
+INSERT INTO policies (
+    policy_id,
+    customer_id,
+    broker_id,
+    product_id,
+    policy_number,
+    premium_amount,
+    policy_start_date,
+    policy_end_date,
+    status
+) VALUES (
+    501,
+    201,
+    101,
+    301,
+    'POL-2026-001',
+    50000.00,
+    DATE '2026-01-15',
+    DATE '2027-01-14',
+    'ACTIVE'
+);
+
+INSERT INTO policies (
+    policy_id,
+    customer_id,
+    broker_id,
+    product_id,
+    policy_number,
+    premium_amount,
+    policy_start_date,
+    policy_end_date,
+    status
+) VALUES (
+    502,
+    202,
+    102,
+    302,
+    'POL-2026-002',
+    75000.00,
+    DATE '2026-02-01',
+    DATE '2027-01-31',
+    'ACTIVE'
+);
+
+INSERT INTO policies (
+    policy_id,
+    customer_id,
+    broker_id,
+    product_id,
+    policy_number,
+    premium_amount,
+    policy_start_date,
+    policy_end_date,
+    status
+) VALUES (
+    503,
+    203,
+    103,
+    303,
+    'POL-2026-003',
+    100000.00,
+    DATE '2026-03-10',
+    DATE '2027-03-09',
+    'ACTIVE'
+);
