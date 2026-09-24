@@ -62,3 +62,38 @@ CREATE TABLE brokerage_rates (
     CONSTRAINT chk_brokerage_rate
         CHECK (brokerage_rate >= 0 AND brokerage_rate <= 100)
 );
+
+
+-- ============================================
+-- POLICIES TABLE
+-- ============================================
+
+CREATE TABLE policies (
+    policy_id NUMBER PRIMARY KEY,
+    customer_id NUMBER NOT NULL,
+    broker_id NUMBER NOT NULL,
+    product_id NUMBER NOT NULL,
+    policy_number VARCHAR2(50) UNIQUE NOT NULL,
+    premium_amount NUMBER(12,2) NOT NULL,
+    policy_start_date DATE NOT NULL,
+    policy_end_date DATE NOT NULL,
+    status VARCHAR2(20) DEFAULT 'ACTIVE',
+
+    CONSTRAINT fk_policy_customer
+        FOREIGN KEY (customer_id)
+        REFERENCES customers(customer_id),
+
+    CONSTRAINT fk_policy_broker
+        FOREIGN KEY (broker_id)
+        REFERENCES brokers(broker_id),
+
+    CONSTRAINT fk_policy_product
+        FOREIGN KEY (product_id)
+        REFERENCES products(product_id),
+
+    CONSTRAINT chk_premium_amount
+        CHECK (premium_amount > 0),
+
+    CONSTRAINT chk_policy_dates
+        CHECK (policy_end_date >= policy_start_date)
+);
