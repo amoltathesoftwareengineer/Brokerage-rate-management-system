@@ -280,3 +280,56 @@ INSERT INTO policies (
     DATE '2027-03-09',
     'ACTIVE'
 );
+
+
+-- ============================================
+-- BROKERAGE TRANSACTION SAMPLE DATA
+-- ============================================
+
+INSERT INTO brokerage_transactions (
+    transaction_id,
+    policy_id,
+    brokerage_rate,
+    brokerage_amount,
+    transaction_date,
+    status
+) VALUES (
+    601,
+    501,
+    7.00,
+    3500.00,
+    DATE '2026-01-15',
+    'PROCESSED'
+);
+
+INSERT INTO brokerage_transactions (
+    transaction_id,
+    policy_id,
+    brokerage_rate,
+    brokerage_amount,
+    transaction_date,
+    status
+) VALUES (
+    602,
+    502,
+    5.50,
+    4125.00,
+    DATE '2026-02-01',
+    'PROCESSED'
+);
+
+INSERT INTO brokerage_transactions (
+    transaction_id,
+    policy_id,
+    brokerage_rate,
+    brokerage_amount,
+    transaction_date,
+    status
+) VALUES (
+    603,
+    503,
+    6.00,
+    6000.00,
+    DATE '2026-03-10',
+    'PROCESSED'
+);
