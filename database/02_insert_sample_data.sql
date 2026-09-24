@@ -103,3 +103,50 @@ INSERT INTO customers (
     'Nashik, Maharashtra',
     'ACTIVE'
 );
+
+
+-- ============================================
+-- PRODUCT SAMPLE DATA
+-- ============================================
+
+INSERT INTO products (
+    product_id,
+    product_name,
+    product_type,
+    description,
+    status
+) VALUES (
+    301,
+    'Motor Insurance',
+    'GENERAL',
+    'Insurance coverage for private and commercial vehicles',
+    'ACTIVE'
+);
+
+INSERT INTO products (
+    product_id,
+    product_name,
+    product_type,
+    description,
+    status
+) VALUES (
+    302,
+    'Health Insurance',
+    'HEALTH',
+    'Health insurance coverage for individuals and families',
+    'ACTIVE'
+);
+
+INSERT INTO products (
+    product_id,
+    product_name,
+    product_type,
+    description,
+    status
+) VALUES (
+    303,
+    'Life Insurance',
+    'LIFE',
+    'Life insurance protection for policyholders',
+    'ACTIVE'
+);
