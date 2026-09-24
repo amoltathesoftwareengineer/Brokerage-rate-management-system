@@ -121,3 +121,27 @@ CREATE TABLE brokerage_transactions (
     CONSTRAINT chk_brokerage_amount
         CHECK (brokerage_amount >= 0)
 );
+
+
+-- ============================================
+-- BROKERAGE RATE HISTORY TABLE
+-- ============================================
+
+CREATE TABLE brokerage_rate_history (
+    history_id NUMBER PRIMARY KEY,
+    rate_id NUMBER NOT NULL,
+    old_rate NUMBER(5,2),
+    new_rate NUMBER(5,2) NOT NULL,
+    changed_date DATE DEFAULT SYSDATE,
+    changed_by VARCHAR2(100),
+
+    CONSTRAINT fk_history_rate
+        FOREIGN KEY (rate_id)
+        REFERENCES brokerage_rates(rate_id),
+
+    CONSTRAINT chk_old_rate
+        CHECK (old_rate IS NULL OR (old_rate >= 0 AND old_rate <= 100)),
+
+    CONSTRAINT chk_new_rate
+        CHECK (new_rate >= 0 AND new_rate <= 100)
+);
