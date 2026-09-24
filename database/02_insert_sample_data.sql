@@ -150,3 +150,62 @@ INSERT INTO products (
     'Life insurance protection for policyholders',
     'ACTIVE'
 );
+
+
+-- ============================================
+-- BROKERAGE RATE SAMPLE DATA
+-- ============================================
+
+INSERT INTO brokerage_rates (
+    rate_id,
+    broker_id,
+    product_id,
+    brokerage_rate,
+    effective_from,
+    effective_to,
+    status
+) VALUES (
+    401,
+    101,
+    301,
+    7.00,
+    DATE '2026-01-01',
+    NULL,
+    'ACTIVE'
+);
+
+INSERT INTO brokerage_rates (
+    rate_id,
+    broker_id,
+    product_id,
+    brokerage_rate,
+    effective_from,
+    effective_to,
+    status
+) VALUES (
+    402,
+    102,
+    302,
+    5.50,
+    DATE '2026-01-01',
+    NULL,
+    'ACTIVE'
+);
+
+INSERT INTO brokerage_rates (
+    rate_id,
+    broker_id,
+    product_id,
+    brokerage_rate,
+    effective_from,
+    effective_to,
+    status
+) VALUES (
+    403,
+    103,
+    303,
+    6.00,
+    DATE '2026-01-01',
+    NULL,
+    'ACTIVE'
+);
