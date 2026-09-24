@@ -204,6 +204,28 @@ Through this project, the following practical database concepts are demonstrated
 
 ---
 
+## How to Run
+
+The SQL scripts can be executed sequentially in an Oracle Database environment.
+
+### Execution Order
+
+1. `01_create_tables.sql` – Create database tables and constraints
+2. `02_insert_sample_data.sql` – Insert sample data
+3. `03_queries.sql` – Execute SQL queries and reports
+4. `04_views.sql` – Create database views
+5. `05_functions.sql` – Create PL/SQL functions
+6. `06_procedures.sql` – Create PL/SQL procedures
+7. `07_triggers.sql` – Create database triggers
+8. `08_reports.sql` – Execute business reports
+
+### Oracle Environment
+
+The project was developed and tested using an Oracle Database environment.
+
+> Note: Execute the scripts in the above order because later components depend on tables and objects created by earlier scripts.
+
+
 ## Project Status
 
 **Completed**
